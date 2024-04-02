@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário Jogos Terminados</title>
+    <link rel="shortcut icon" href="favicons/favicon_io (5)/favicon-16x16.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .calendar {
+            width: 1200px;
+            margin: 20px auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 20px;
+            font-size: 130%;
+            cursor: pointer;
+            position: relative;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .prev, .next {
+            display: inline-block;
+            padding: 20px;
+            background-color: #f2f2f2;
+            cursor: pointer;
+            font-size: 100%;
+        }
+        .month-year {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 50px;
+        }
+        .thumbnail-img {
+            max-width: 130px; /* Tamanho das imagens */
+            max-height: 100%;
+        }
+        .remove-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            padding: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            display: none;
+        }
+        td:hover .remove-btn {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar">
+        <div class="month-year" id="monthYear"></div>
+        <button class="prev" onclick="prevMonth()">Anterior</button>
+        <button class="next" onclick="nextMonth()">Próximo</button>
+        <button class="save-btn" onclick="saveCalendar()">Salvar Calendário</button>
+        <table id="calendarTable">
+            <thead>
+                <tr>
+                    <th>Domingo</th>
+                    <th>Segunda</th>
+                    <th>Terça</th>
+                    <th>Quarta</th>
+                    <th>Quinta</th>
+                    <th>Sexta</th>
+                    <th>Sábado</th>
+                </tr>
+            </thead>
+            <tbody id="calendarBody">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Carregar imagens do armazenamento local do navegador
+        let images = JSON.parse(localStorage.getItem('calendarImages')) || {};
+
+        function createCalendar(year, month) {
+            const calendarBody = document.getElementById('calendarBody');
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const firstDayIndex = new Date(year, month, 1).getDay();
+            const months = [
+                "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+                "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+            ];
+            const monthName = months[month];
+
+            document.getElementById('monthYear').innerHTML = `${monthName} ${year}`;
+
+            let date = 1;
+            let calendarHTML = '';
+
+            for (let i = 0; i < 6; i++) {
+                calendarHTML += '<tr>';
+                for (let j = 0; j < 7; j++) {
+                    if ((i === 0 && j < firstDayIndex) || (date > daysInMonth)) {
+                        calendarHTML += '<td></td>';
+                    } else {
+                        const dayKey = `${year}-${month}-${date}`;
+                        const imageSrcs = images[dayKey] || [];
+                        calendarHTML += `<td id="cell-${date}" onclick="addOrRemoveImage(${year}, ${month}, ${date})">${date}`;
+                        imageSrcs.forEach(src => {
+                            calendarHTML += `<div><img class="thumbnail-img" src="${src}" alt="${dayKey}"><button class="remove-btn" onclick="removeImage(${year}, ${month}, ${date}, '${src}'); event.stopPropagation();">Remover</button></div>`;
+                        });
+                        calendarHTML += '</td>';
+                        date++;
+                    }
+                }
+                calendarHTML += '</tr>';
+            }
+
+            calendarBody.innerHTML = calendarHTML;
+        }
+
+        function saveCalendar() {
+            window.print();
+        }
+        function addImage(year, month, day, imagePath) {
+            const dayKey = `${year}-${month}-${day}`;
+            if (!images[dayKey]) {
+                images[dayKey] = [];
+            }
+            images[dayKey].push(imagePath);
+            updateLocalStorage();
+            createCalendar(year, month);
+        }
+
+        function removeImage(year, month, day, imagePath) {
+            const dayKey = `${year}-${month}-${day}`;
+            const index = images[dayKey].indexOf(imagePath);
+            if (index !== -1) {
+                images[dayKey].splice(index, 1);
+                updateLocalStorage();
+                createCalendar(year, month);
+            }
+        }
+
+        function addOrRemoveImage(year, month, day) {
+            const imagePath = prompt("Insira a URL da imagem:");
+            if (imagePath) {
+                const dayKey = `${year}-${month}-${day}`;
+                if (images[dayKey] && images[dayKey].includes(imagePath)) {
+                    removeImage(year, month, day, imagePath);
+                } else {
+                    addImage(year, month, day, imagePath);
+                }
+            }
+        }
+
+        function updateLocalStorage() {
+            localStorage.setItem('calendarImages', JSON.stringify(images));
+        }
+
+        function getCurrentYearMonth() {
+            const currentDate = new Date();
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            return { year, month };
+        }
+
+        let currentYear, currentMonth;
+        ({ year: currentYear, month: currentMonth } = getCurrentYearMonth());
+        createCalendar(currentYear, currentMonth);
+
+        function prevMonth() {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            createCalendar(currentYear, currentMonth);
+        }
+
+        function nextMonth() {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            createCalendar(currentYear, currentMonth);
+        }
+    </script>
+</body>
+</html>
