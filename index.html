@@ -35,7 +35,7 @@
       display: flex;
       list-style-type: none;
       padding: 0;
-      max-width: 1025px;
+      max-width: 1200px;
       margin: 0 auto;
     }
     .tab {
@@ -43,7 +43,7 @@
       text-align: center;
       padding: 10px;
       background-color: #f0f0f0;
-      cursor: pointer;
+      cursor:pointer;
     }
     .tab.active {
       background-color: #ccc;
@@ -154,7 +154,9 @@
     <li class="tab" data-tab="tab-jogo2">Versão</li>
     <li class="tab" data-tab="tab-jogo3">Ecce Homo</li>
     <li class="tab" data-tab="tab-jogo4">Pôster de Filme</li>
-    <li class="tab" data-tab="tab-jogo5">Universo Paralelo</li>
+    <li class="tab" data-tab="tab-jogo5">Tirinha</li>
+    <li class="tab" data-tab="tab-jogo6">Universo Paralelo</li>
+    
   </ul>
   <div class="container">
     <!-- Conteúdo das abas -->
@@ -343,7 +345,7 @@
             </div>
             <!-- Espaço para imagem ou GIF grande -->
             <img src="16-2.png" alt="Imagem 1">
-            <h3>2º turno: Cubra uma parte importante do desenho com um retângulo de forma que não esconda o desenho completamente. Para o retângulo, EVITE usar as cores branco ou preto. Clique em "Pronto".</h3>
+            <h3>2º turno: Cubra uma parte importante do desenho com um retângulo de forma que não esconda o desenho completamente. Para o retângulo, EVITE usar as cores branco ou preto (recomendação: cinza). Clique em "Pronto".</h3>
           </div>
         </div>
         <div class="grid-item">
@@ -427,8 +429,57 @@
         </div>
       </div>
     </div>
-    <!--Espaço para Universo Paralelo-->
+    <!--Espaço do Tirinha-->
     <div class="content" id="tab-jogo5-content" style="display: none;">
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="image-container">
+            <div class="overlay blue-bg">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="24.png" alt="Imagem 1">
+            <h3>1º turno: divida a tela em 4 espaços com duas linhas. Depois desenhe o primeiro quadrinho da história e clique em "Pronto".</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container">
+            <div class="overlay pink-bg">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="25.png" alt="Imagem 2">
+            <h3>2º turno: desenhe o segundo quadrinho da tirinha que receber. Pressione "Pronto" ao acabar.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container red-bg">
+            <div class="overlay pink-bg">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="26.png" alt="Imagem 2">
+            <h3>3º turno: desenhe o terceiro quadrinho da próxima história. Clique em "Pronto" ao terminar.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container">
+            <div class="overlay">
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="27.png" alt="Imagem 2">
+            <h3>4º turno: desenhe o quadrinho que vai encerrar a história que você recebeu.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container">
+            <div class="overlay pink-bg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Espaço para Universo Paralelo-->
+    <div class="content" id="tab-jogo6-content" style="display: none;">
       <div class="grid-container3">
         <div class="grid-item">
           <div class="image-container">
@@ -448,6 +499,7 @@
           </div>
         </div>
       </div> 
+    </div>
   </div>
   <script>
     // JavaScript para alternar entre as abas
