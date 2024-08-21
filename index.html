@@ -37,13 +37,15 @@
       margin: 0 auto;
       padding: 20px;
     }
+    .tabs-container{
+      background-color: #f0f0f0;
+    }
     .tabs {
       display: flex;
       list-style-type: none;
       padding: 0;
       max-width: 1200px;
       margin: 0 auto;
-      background-color: #f0f0f0;
     }
     .tab {
       flex: 1;
@@ -154,6 +156,7 @@
 <body>
   <h1><a href="https://www.twitch.tv/anduspark" target="_blank"><img id="logomarca" src="logo2.png"></a></h1>
    <!-- Abas -->
+  <div class="tabs-container">
    <ul class="tabs">
     <li class="tab active" data-tab="tab-fusao">Fusão</li>
     <li class="tab" data-tab="tab-outros">Armário</li>
@@ -163,7 +166,7 @@
     <li class="tab" data-tab="tab-jogo4">Pôster de Filme</li>
     <li class="tab" data-tab="tab-jogo5">Tirinha</li>
     <li class="tab" data-tab="tab-jogo6">Universo Paralelo</li>
-    
+  </div>
   </ul>
   <div class="container">
     <!-- Conteúdo das abas -->
