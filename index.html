@@ -57,19 +57,24 @@
       cursor:pointer;
     }
         /* Ícone de informações no canto inferior esquerdo */
-    .info-icon {
+        .info-icon {
       position: fixed;
-      bottom: 20px; /* Posiciona 20px do fundo da página */
-      left: 20px; /* Posiciona 20px da lateral esquerda da página */
+      bottom: 20px;
+      left: 20px;
       cursor: pointer;
       font-size: 20px;
       color: #d40000;
       background-color: #fff;
-      padding: 5px;
+      width: 40px; /* Define uma largura fixa */
+      height: 40px; /* Define uma altura fixa */
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 50%;
       box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
-      z-index: 1000; /* Garante que o ícone esteja acima dos outros elementos */
-    }
+      z-index: 1000;
+}
+
 
         /* Estilo do tooltip */
     .info-icon .tooltip {
@@ -227,13 +232,21 @@
    <ul class="tabs">
     <li class="tab" data-tab="tab-jogo7"><img src="">Traço Gradual</li>
     <li class="tab" data-tab="tab-jogo8"><img src="">B.M.C.</li>
-    <li class="tab" data-tab="tab-jogo9"><img src="new.png" style="width:16px; height: auto;">Nomes</li>
-    <li class="tab" data-tab="tab-jogo10"><img src="new.png" style="width: 16px; height: auto;">IA-rte</li>
+    <li class="tab" data-tab="tab-jogo9"><img src="">Nomes</li>
+    <li class="tab" data-tab="tab-jogo10"><img src="">IA-rte</li>
     <li class="tab" data-tab="tab-jogo11"><img src="new.png" style="width: 16px; height: auto;">Retrato Falado</li>
-    <li style="color: #ff9100;" class="tab" data-tab="tab-jogo12"><img src="">Multiplayer (em breve)</li>
-    <li style="color: #ff9100;" class="tab" data-tab="tab-jogo13"><img src="">Versus (em breve)</li>
+    <li class="tab" data-tab="tab-jogo12"><img src="new.png" style="width:16px; height: auto;">Multiplayer</li>
+    <li class="tab" data-tab="tab-jogo13"><img src="new.png" style="width:16px; height: auto;">Versus</li>
   </div>
   </ul>
+</ul>
+<div class="tabs-container">
+ <ul class="tabs">
+  <li class="tab" data-tab="tab-jogo14"><img src="new.png" style="width:16px; height: auto;">Armário RPG</li>
+  <li class="tab" data-tab="tab-jogo15"><img src="new.png" style="width:16px; height: auto;">Pokédex</li>
+  <li style="color: #ff9100;" class="tab" data-tab="tab-jogo16"><img src="">Evolução (em breve)</li>
+</div>
+</ul>
   <div class="container">
     <!-- Conteúdo das abas -->
     <div class="content active" id="tab-fusao-content">
@@ -354,7 +367,144 @@
         </div>
       </div>
     </div>
-    
+    <!-- Conteúdo da aba Armário RPG -->
+    <div class="content" id="tab-jogo14-content" style="display: none;">
+      <div class="info-icon">
+        ℹ️
+        <span class="tooltip"><h3>Configure:</h3><br><p>Modo: Cooperativo</p><p>Tempo: Decisão do Host (3/3/3/3/10-20)</p><p>Interação: Apenas Desenhar</p><p>Turnos: 5 turnos</p><p>Manter Desenho: Todos os Desenhos</p><h6>Trazido ao canal por: Tcoentro</h6></span>
+      </div>
+      <div class="grid-container2">
+        <div class="grid-item">
+          <div class="image-container oran-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="rpg00.png" alt="Imagem 1">
+            <h3><mark>1º turno:</mark> comece dividindo a tela em 5 espaços usando quatro linhas. No total serão quatro espaços menores e um maior.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container oran-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="rpg01.png" alt="Imagem 1">
+            <h3><mark>Ainda no 1º turno:</mark> ARMA - desenhe um objeto ou poder que será usado como arma . Clique em "Pronto".</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container yellow-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="rpg03.png" alt="Imagem 1">
+            <h3><mark>3º turno:</mark> RAÇA - desenhe a raça do personagem (humano, orc, elfo, goblin etc). Lembre-se que você pode usar raças de personagens conhecidos (raça do Zoidberg etc) ou inventar uma (raça das minhocas etc). Clique em "Pronto"</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container blue-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="rpg04.png" alt="Imagem 2">
+            <h3><mark>4º turno:</mark> ALEATÓRIO - desenhe um quarto e último atributo aleatório e clique em "Pronto".</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container red-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="rpg02.png" alt="Imagem 3">
+            <h3><mark>2º turno:</mark> CLASSE/PROFISSÃO - desenhe a classe do personagem (guerreiro, arqueiro, mago, necromante, monge etc). Você pode usar profissõees modernas (bombeiro etc) ou inventar uma (extrator de óleo de gigantes etc). Clique em "Pronto"</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container pink-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="rpg05.png" alt="Imagem 4">
+            <h3><mark>5º turno:</mark> crie um herói ou vilão usando todas as qualidades dadas nos quadrados menores em um tempo maior.</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Conteúdo da aba Pokédex -->
+    <div class="content" id="tab-jogo15-content" style="display: none;">
+      <div class="info-icon">
+        ℹ️
+        <span class="tooltip"><h3>Configure:</h3><br><p>Modo: Cooperativo</p><p>Tempo: Decisão do Host (5/2/2/15/5)</p><p>Interação: Apenas Desenhar</p><p>Turnos: 5 turnos</p><p>Manter Desenho: Todos os Desenhos</p><h6>Trazido ao canal por: Tcoentro</h6></span>
+      </div>
+      <div class="grid-container2">
+        <div class="grid-item">
+          <div class="image-container oran-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="dex00.png" alt="Imagem 1">
+            <h3><mark>1º turno:</mark> comece dividindo a tela em 4 espaços usando linhas. No total serão três espaços menores e um maior.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container oran-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="dex01.png" alt="Imagem 1">
+            <h3><mark>Ainda no 1º turno:</mark> desenhe um animal/objeto como base para a criação de um pokémon em um dos espaços menores. Clique em "Pronto".</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container yellow-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="dex03.png" alt="Imagem 1">
+            <h3><mark>3º turno:</mark> escolha até duas cores base para a criação do pokémon (outras cores podem ser usadas contanto que essas sejam as principais). Clique em "Pronto".</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container blue-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="dex04.png" alt="Imagem 2">
+            <h3><mark>4º turno:</mark> crie um pokémon com base nos atributos fornecidos nos turnos anteriores.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container red-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="dex02.png" alt="Imagem 3">
+            <h3><mark>2º turno:</mark> no próximo espaço pequeno, desenhe/escreva um ou dois tipos para o pokémon (fogo, água, dragão, terra, metal etc). Clique em "Pronto".</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container pink-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="dex05.png" alt="Imagem 4">
+            <h3><mark>5º turno:</mark> crie um nome para o pokémon que você receber. Dica: muitos nomes são trocadilhos que misturam as palavras que caracterizam o personagem, como o objeto + o tipo.</h3>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- Espaço para Silhueta -->
     
     <div class="content" id="tab-jogo1-content" style="display: none;">
@@ -384,6 +534,7 @@
         </div>
       </div>
     </div>
+    
     <!-- Espaço para o modo Versão -->
     
     <div class="content" id="tab-jogo2-content" style="display: none;">
@@ -456,6 +607,54 @@
             <!-- Espaço para imagem ou GIF grande -->
             <img src="16.png" alt="Imagem 2">
             <h3><mark>3º turno:</mark> complete a parte oculta com seu próprio estilo ou mudando elementos do original.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container red-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Espaço do Versus-->
+    
+    <div class="content" id="tab-jogo13-content" style="display: none;">
+      <div class="info-icon">
+        ℹ️
+        <span class="tooltip"><h3>Configure:</h3><br><p>Modo: Cooperativo</p><p>Tempo: Decisão do Host (5/5/10-20)</p><p>Interação: Apenas Desenhar</p><p>Turnos: 3 turnos</p><p>Manter Desenho: Todos os Desenhos</p><h6>Trazido ao canal por: Buzz_indo_ali</h6></span>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="image-container red-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="vs01.png" alt="Imagem 1">
+            <h3><mark>1º turno:</mark> divida a tela em três partes iguais usando duas linhas verticais. Desenhee um peersonagem quualquer no espaço à esquerda e escreva seu nome. Depois disso clique em "Pronto".</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container oran-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="vs02.png" alt="Imagem 1">
+            <h3><mark>2º turno:</mark> desenhe um segundo personagem no espaço à direita e escreva seu nome. Clique em "Pronto".</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container yellow-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="vs03.png" alt="Imagem 2">
+            <h3><mark>3º turno:</mark> decida um vencedor entre os dois personagens que receber e desenhe uma cena que retrate o triunfo do vencedor sobre o perdedor no espaço central
+              .</h3>
           </div>
         </div>
         <div class="grid-item">
@@ -579,6 +778,60 @@
             <!-- Espaço para imagem ou GIF grande -->
             <img src="27.png" alt="Imagem 2">
             <h3><mark>4º turno:</mark> desenhe o quadrinho que vai encerrar a história que você recebeu.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container pink-bg">
+            <div class="overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Espaço do Multiplayer-->
+    
+    <div class="content" id="tab-jogo12-content" style="display: none;">
+      <div class="info-icon">
+        ℹ️
+        <span class="tooltip"><h3>Configure:</h3><br><p>Modo: Quebra-Gelo</p><p>Tempo: Decisão do Host (2/5/5/10-15)</p><p>Interação: Frase Fixa</p><p>Turnos: 4 turnos</p><p>Manter Desenho: Todos os Desenhos</p><h6>Trazido ao canal por: Skayers</h6></span>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="image-container blue-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="mt01.png" alt="Imagem 1">
+            <h3><mark>1º turno:</mark> descreva uma cena/ação entre dois personagens (sem citar nomes), recomendável indicá-los como 1 e 2 (ou A e B). Clique em "Pronto".</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container pink-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="mt02.png" alt="Imagem 2">
+            <h3><mark>2º turno:</mark> divida a tela em três espaços: dois menores e um maior. Ainda neste turno, desenhe um personagem e escreva seu nome. Pressione "Pronto" ao acabar.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container red-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="mt03.png" alt="Imagem 2">
+            <h3><mark>3º turno:</mark> desenhe um segundo personagem e escreva seu nome. Clique em "Pronto" ao terminar.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container oran-bg">
+            <div class="overlay">
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img src="mt04.png" alt="Imagem 2">
+            <h3><mark>4º turno:</mark> desenhe o que foi pedido na frase substituindo 1 e 2 (ou A e B) pelos personagens desenhados nos turnos anteriores.</h3>
           </div>
         </div>
         <div class="grid-item">
@@ -834,12 +1087,12 @@
           </div>
         </div>
         <div class="grid-item">
-          <div class="image-container red-bg">
+          <div class="image-container pink-bg">
             <div class="overlay">
               <div class="overlay-text">Primeiro Round</div>
             </div>
             <div class="grid-item">
-          <div class="image-container oran-bg">
+          <div class="image-container pink-bg">
             <div class="overlay">
               <div class="overlay-text">Primeiro Round</div>
             </div>
