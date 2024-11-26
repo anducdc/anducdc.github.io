@@ -57,7 +57,6 @@
       cursor:pointer;
       font-family: 'Roboto-Regular', sans-serif;
     }
-        /* Ícone de informações no canto inferior esquerdo */
         .info-icon {
       position: fixed;
       bottom: 20px;
@@ -66,8 +65,8 @@
       font-size: 20px;
       color: #d40000;
       background-color: #fff;
-      width: 35px; /* Define uma largura fixa */
-      height: 35px; /* Define uma altura fixa */
+      width: 35px;
+      height: 35px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -76,7 +75,6 @@
       z-index: 1000;
     }
 
-        /* Estilo do tooltip */
     .info-icon .tooltip {
       visibility: hidden;
       width: 200px;
@@ -86,7 +84,7 @@
       border-radius: 5px;
       padding: 5px;
       position: absolute;
-      bottom: 40px; /* Distância do tooltip para o ícone */
+      bottom: 40px;
       left: 50%;
       transform: translateX(0%);
       opacity: 0;
@@ -94,7 +92,6 @@
       z-index: 10000;
     }
 
-    /* Seta do tooltip */
     .info-icon .tooltip::after {
       content: "";
       position: absolute;
@@ -106,7 +103,6 @@
       border-color: #333 transparent transparent transparent;
     }
 
-    /* Exibir o tooltip ao passar o mouse */
     .info-icon:hover .tooltip {
       visibility: visible;
       opacity: 1;
@@ -217,7 +213,17 @@
   </style>
 </head>
 <body>
-  <h1><a href="https://www.twitch.tv/anduspark" target="_blank"><img id="logomarca" src="logo3.png"></a></h1>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
+    <h1><a href="https://www.twitch.tv/anduspark" target="_blank"><img id="logomarca" src="logo3.png"></a></h1>
+    <h1 style="text-align: right;"><img id="mainImage" style="max-height: 70%; padding: 15px 50px;" src="suporte.png" alt="suporte o canal" onmouseover="changeImage(true)" onmouseout="changeImage(false)"></h1>
+    <!-- Tooltip image (hidden by default) -->
+    <img 
+    id="tooltipImage2" 
+    src="pix.png" 
+    alt="tooltip2"
+    style="display: none; position: absolute; max-height: 150px; z-index: 10;"
+    >
+  </div>
    <!-- Abas -->
   <div class="tabs-container">
    <ul class="tabs">
@@ -1235,6 +1241,26 @@ function showTemporaryMessage(message) {
     }, 500); // Aguarda o término da transição
   }, 3000);
 }
+
+function changeImage(isHovering) {
+  const mainImage = document.getElementById('mainImage');
+  const tooltipImage = document.getElementById('tooltipImage2');
+  
+  if (isHovering) {
+    // Get the position of the main image relative to the document
+    const rect = mainImage.getBoundingClientRect();
+    
+    // Set the tooltip's position (just southwest of the main image)
+    tooltipImage.style.left = `${rect.left}px`;   // Align left of the tooltip with the left of the main image
+    tooltipImage.style.top = `${rect.bottom + 5}px`; // Set the tooltip just below the main image (5px below)
+    
+    tooltipImage.style.display = 'block';  // Show the tooltip image
+  } else {
+    tooltipImage.style.display = 'none';   // Hide the tooltip image when not hovering
+  }
+}
+
+
   </script>
 </body>
 </html>
