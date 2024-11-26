@@ -134,6 +134,12 @@
       max-height: 50px;
       padding-top: 10px;
     }
+    #ajudePix{
+      padding-left: 0;
+      margin: 0;
+
+      
+    }
     .image-container {
       position: relative;
       width: 100%; 
@@ -213,9 +219,9 @@
   </style>
 </head>
 <body>
-  <div style="display: grid; grid-template-columns: repeat(2, 1fr);">
+  <div style="display: grid; grid-template-columns: 2fr 1fr;">
     <h1><a href="https://www.twitch.tv/anduspark" target="_blank"><img id="logomarca" src="logo3.png"></a></h1>
-    <h1 style="text-align: right;"><img id="mainImage" style="max-height: 70%; margin: 15px 50px;" src="suporte.png" alt="suporte o canal" onmouseover="changeImage(true)" onmouseout="changeImage(false)"></h1>
+    <h1 id="ajudePix" style="text-align: right;"><img id="mainImage" style="max-height: 70%; margin: 15px 50px;" src="suporte.png" alt="suporte o canal" onmouseover="changeImage(true)" onmouseout="changeImage(false)"></h1>
     <!-- Tooltip image (hidden by default) -->
     <img 
     id="tooltipImage2" 
