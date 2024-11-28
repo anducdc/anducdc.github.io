@@ -213,14 +213,13 @@
     a:link {
       color: #c9a4e0;
     }
-        /* CSS for smooth fade transition */
     img {
-      transition: opacity 1s ease-in-out ;  /* 1-second fade transition */
-      opacity: 1;  /* Ensure images are visible by default */
+      transition: opacity 1s ease-in-out ;
+      opacity: 1;
     }
 
     img.hidden {
-      opacity: 0;  /* Hide the image by making it fully transparent */
+      opacity: 0;
     }
 
 
@@ -233,7 +232,6 @@
   <div style="display: grid; grid-template-columns: 2fr 1fr;">
     <h1><a href="https://www.twitch.tv/anduspark" target="_blank"><img id="logomarca" src="logo3.png"></a></h1>
     <h1 id="ajudePix" style="text-align: right;"><img id="mainImage" style="max-height: 70%; margin: 15px 50px;" src="suporte.png" alt="suporte o canal" onmouseover="changeImage(true)" onmouseout="changeImage(false)"></h1>
-    <!-- Tooltip image (hidden by default) -->
     <img 
     id="tooltipImage2" 
     src="pix.png" 
@@ -1145,7 +1143,6 @@
     </div>
   </div>
   <script>
-    // JavaScript para alternar entre as abas
     const tabs = document.querySelectorAll('.tab');
     const tabContents = document.querySelectorAll('.content');
   
@@ -1153,11 +1150,9 @@
       tab.addEventListener('click', () => {
         const tabId = tab.dataset.tab;
   
-        // Ativar a aba clicada
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
   
-        // Mostrar o conteúdo correspondente e ocultar os outros
         tabContents.forEach(content => {
           if (content.id === tabId + '-content') {
             content.style.display = 'block';
@@ -1166,96 +1161,80 @@
           }
         });
   
-        // Atualizar a posição do tooltip após alternar a aba
         positionTooltip();
       });
     });
   
-    // Função para posicionar o tooltip de forma dinâmica
     function positionTooltip() {
       const infoIcon = document.querySelector('.info-icon');
       const tooltip = document.querySelector('.tooltip');
       
-      // Garantir que o tooltip apareça na posição correta
       const iconRect = infoIcon.getBoundingClientRect();
       const tooltipRect = tooltip.getBoundingClientRect();
   
-      // Ajuste a posição do tooltip
-      tooltip.style.visibility = 'hidden'; // Inicialmente oculto
-      tooltip.style.opacity = '0'; // Inicialmente invisível
+      tooltip.style.visibility = 'hidden';
+      tooltip.style.opacity = '0';
       
-      // Ajustar a posição do tooltip ao passar o mouse sobre o ícone
       infoIcon.addEventListener('mouseenter', function () {
-        // Verifique se o tooltip ultrapassaria a borda direita
         if (window.innerWidth - iconRect.right < tooltipRect.width + 40) {
           tooltip.style.left = 'auto';
-          tooltip.style.right = '20px'; // Ajusta para a borda direita
+          tooltip.style.right = '20px';
         } else {
           tooltip.style.left = '50%';
           tooltip.style.right = 'auto';
-          tooltip.style.transform = 'translateX(-50%)'; // Para centralizar
+          tooltip.style.transform = 'translateX(-50%)';
         }
   
-        // Ajustar a posição do tooltip se ele estiver muito perto da borda inferior
         if (window.innerHeight - iconRect.bottom < tooltipRect.height + 40) {
-          tooltip.style.bottom = '120%'; // Ajuste para que o tooltip apareça acima
+          tooltip.style.bottom = '120%';
         } else {
-          tooltip.style.bottom = '40px'; // Posição padrão
+          tooltip.style.bottom = '40px';
         }
   
-        // Garantir que o tooltip não ultrapasse a borda esquerda
         if (iconRect.left < tooltipRect.width / 2) {
-          tooltip.style.left = '20px'; // Ajusta para a borda esquerda
-          tooltip.style.transform = 'none'; // Remove o centramento
+          tooltip.style.left = '20px';
+          tooltip.style.transform = 'none';
         }
   
-        // Exibir o tooltip
         tooltip.style.visibility = 'visible';
         tooltip.style.opacity = '1';
       });
   
-      // Ocultar o tooltip quando o mouse sai
       infoIcon.addEventListener('mouseleave', function () {
         tooltip.style.visibility = 'hidden';
         tooltip.style.opacity = '0';
       });
     }
   
-    // Chamar a função para garantir que o tooltip seja posicionado corretamente na primeira vez
     document.addEventListener("DOMContentLoaded", function () {
       positionTooltip();
     });
 
 
     function CopiarPrompt() {
-  // Obtém o elemento <h3>
   var copyText = document.getElementById("promptIA");
 
-  // Obtém o texto dentro do <h3>, incluindo os <br> como quebras de linha
   var textToCopy = copyText.innerText || copyText.textContent;
 
-  // Copia o texto para a área de transferência
   navigator.clipboard.writeText(textToCopy).then(() => {
-    // Exibe a mensagem de confirmação
     showTemporaryMessage("Texto copiado com sucesso!");
   }).catch(err => {
     console.error("Erro ao copiar texto: ", err);
   });
 }
 
-// Função para exibir uma mensagem temporária
 function showTemporaryMessage(message) {
   var messageElement = document.getElementById("copyMessage");
   messageElement.innerText = message;
   messageElement.style.display = "block";
   messageElement.style.opacity = "1";
 
-  // Oculta a mensagem após 3 segundos
+
   setTimeout(() => {
     messageElement.style.opacity = "0";
     setTimeout(() => {
       messageElement.style.display = "none";
-    }, 500); // Aguarda o término da transição
+    }, 500);
   }, 3000);
 }
 
@@ -1264,22 +1243,23 @@ function changeImage(isHovering) {
   const tooltipImage = document.getElementById('tooltipImage2');
   
   if (isHovering) {
-    // Get the position of the main image relative to the document
     const rect = mainImage.getBoundingClientRect();
     
-    // Set the tooltip's position (just southwest of the main image)
-    tooltipImage.style.left = `${rect.left}px`;   // Align left of the tooltip with the left of the main image
-    tooltipImage.style.top = `${rect.bottom + 5}px`; // Set the tooltip just below the main image (5px below)
+    tooltipImage.style.left = `${rect.left}px`;
+    tooltipImage.style.top = `${rect.bottom + 5}px`;
     
-    tooltipImage.style.display = 'block';  // Show the tooltip image
+    tooltipImage.style.display = 'block';
   } else {
-    tooltipImage.style.display = 'none';   // Hide the tooltip image when not hovering
+    tooltipImage.style.display = 'none';
   }
 }
 
-// Image sources
 const images = {
-  img01bmc: ["32.png", "32-02.png"], // List of images
+  img01fusao: ["01.png", "01-02.png", "01-03.png", "01-04.png", "01-05.png"],
+  img02fusao: ["02.png", "02-02.png", "02-03.png", "02-04.png", "02-05.png"],
+  img03fusao: ["03.png", "03-02.png", "03-03.png", "03-04.png", "03-05.png"],
+  img04fusao: ["04.png", "04-02.png", "04-03.png", "04-04.png", "04-05.png"],
+  img01bmc: ["32.png", "32-02.png"],
   img02bmc: ["33.png", "33-02.png"],
   img03bmc: ["34.png", "34-02.png"],
   img01rpg: ["rpg00.png", "rpg00-02.png"],
@@ -1291,34 +1271,27 @@ const images = {
   img01universo: ["23.png", "23-02.png", "23-03.png", "23-04.png", "23-05.png", "23-06.png", "23-07.png"]
 };
 
-// Interval for image change (in milliseconds)
-const interval = 10000; // 5 seconds
+const interval = 10000;
 
-// Function to change images with fade effect
 function changeImages() {
   Object.keys(images).forEach(id => {
-    let imgElement = document.getElementById(id); // Get the image element by ID
-    let currentSrc = imgElement.src.split('/').pop(); // Get the current image filename
-    let currentIndex = images[id].indexOf(currentSrc); // Find the index of the current image
+    let imgElement = document.getElementById(id);
+    let currentSrc = imgElement.src.split('/').pop();
+    let currentIndex = images[id].indexOf(currentSrc);
 
-    // Calculate the next index to switch to
     let nextIndex = (currentIndex + 1) % images[id].length;
 
-    // Add the 'hidden' class to fade out the current image
     imgElement.classList.add('hidden');
 
-    // After 1 second (duration of fade-out), switch the image and fade it in
     setTimeout(() => {
-      imgElement.src = images[id][nextIndex]; // Change the image source
-      imgElement.classList.remove('hidden'); // Remove the 'hidden' class to fade the new image in
-    }, 1000); // Wait 1 second before changing the image
+      imgElement.src = images[id][nextIndex];
+      imgElement.classList.remove('hidden');
+    }, 1000);
   });
 }
 
-// Set interval to change images every 5 seconds
 setInterval(changeImages, interval);
 
-// Optionally, trigger the first image change as soon as the page loads
 window.onload = changeImages;
 
   </script>
