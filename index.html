@@ -254,21 +254,23 @@
   </ul>
   <div class="tabs-container">
    <ul class="tabs">
-    <li class="tab" data-tab="tab-jogo7"><img src="">Traço Gradual</li>
-    <li class="tab" data-tab="tab-jogo8"><img src="">B.M.C.</li>
-    <li class="tab" data-tab="tab-jogo9"><img src="">Nomes</li>
-    <li class="tab" data-tab="tab-jogo10"><img src="">IA-rte</li>
-    <li class="tab" data-tab="tab-jogo11"><img src="new.png" style="width: 16px; height: auto;">Retrato Falado</li>
-    <li class="tab" data-tab="tab-jogo12"><img src="new.png" style="width:16px; height: auto;">Multiplayer</li>
-    <li class="tab" data-tab="tab-jogo13"><img src="new.png" style="width:16px; height: auto;">Versus</li>
+    <li class="tab" data-tab="tab-jogo7">Traço Gradual</li>
+    <li class="tab" data-tab="tab-jogo8">B.M.C.</li>
+    <li class="tab" data-tab="tab-jogo9">Nomes</li>
+    <li class="tab" data-tab="tab-jogo10">IA-rte</li>
+    <li class="tab" data-tab="tab-jogo11">Retrato Falado</li>
+    <li class="tab" data-tab="tab-jogo12">Multiplayer</li>
+    <li class="tab" data-tab="tab-jogo13">Versus</li>
   </div>
   </ul>
 </ul>
 <div class="tabs-container">
  <ul class="tabs">
-  <li class="tab" data-tab="tab-jogo14"><img src="new.png" style="width:16px; height: auto;">Armário RPG</li>
+  <li class="tab" data-tab="tab-jogo14">Armário RPG</li>
   <li class="tab" data-tab="tab-jogo15"><img src="new.png" style="width:16px; height: auto;">Pokédex</li>
-  <li style="color: #ff9100;" class="tab" data-tab="tab-jogo16"><img src="">Evolução (em breve)</li>
+  <li class="tab" data-tab="tab-jogo16"><img src="new.png" style="width:16px; height: auto;">Evolução</li>
+  <li class="tab" data-tab="tab-jogo17"><img src="new.png" style="width:16px; height: auto;">Capa de Álbum</li>
+  <li class="tab" data-tab="tab-jogo18"><img src="new.png" style="width:16px; height: auto;">Roleta</li>
 </div>
 </ul>
   <div class="container">
@@ -642,6 +644,53 @@
         </div>
       </div>
     </div>
+    <!--Espaço do Evolução-->
+    
+    <div class="content" id="tab-jogo16-content" style="display: none;">
+      <div class="info-icon">
+        ℹ️
+        <span class="tooltip"><h3>Configure:</h3><br><p>Modo: Cooperativo</p><p>Tempo: Decisão do Host (7/10/15)</p><p>Interação: Apenas Desenhar</p><p>Turnos: 3 turnos</p><p>Manter Desenho: Todos os Desenhos</p><h6>Trazido ao canal por: Jag Comics</h6></span>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="image-container red-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img01evo" src="evo01.png" alt="Imagem 1">
+            <h3><mark>1º turno:</mark> divida a tela em 3 espaços e desenhe um personagem que será evoluído nos próximos rounds. Você pode criar uma nova criatura ou usar um já existente, como Homer Simpson, Deadpool, Mario etc. Escrever um nome para o personagem é opcional. Depois disso clique em "Pronto".</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container oran-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img02evo" src="evo02.png" alt="Imagem 1">
+            <h3><mark>2º turno:</mark> crie uma evolução para o personagem que receber. Caso o personagem já tenha uma evolução, como o Pikachu, tente criar algo novo. Clique em "Pronto".</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container yellow-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img03evo" src="evo03.png" alt="Imagem 2">
+            <h3><mark>3º turno:</mark> desenhe o estágio final da cadeia de evolução do primeiro personagem.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container red-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--Espaço do Versus-->
     
     <div class="content" id="tab-jogo13-content" style="display: none;">
@@ -802,6 +851,60 @@
             <!-- Espaço para imagem ou GIF grande -->
             <img id="img04tirinha" src="27.png" alt="Imagem 2">
             <h3><mark>4º turno:</mark> desenhe o quadrinho que vai encerrar a história que você recebeu.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container pink-bg">
+            <div class="overlay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!--Espaço do Capa de Álbum-->
+    
+     <div class="content" id="tab-jogo17-content" style="display: none;">
+      <div class="info-icon">
+        ℹ️
+        <span class="tooltip"><h3>Configure:</h3><br><p>Modo: Cooperativo</p><p>Tempo: Decisão do Host (5/5/10-20/5)</p><p>Interação: Apenas Desenhar</p><p>Turnos: 4 turnos</p><p>Manter Desenho: Todos os Desenhos</p><h6>Trazido ao canal por: Tecoplay1608</h6></span>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="image-container blue-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img01album" src="album01.png" alt="Imagem 1">
+            <h3><mark>1º turno:</mark> divida a tela em três espaços, dois menores e um maior, usando duas linhas. Desenhe um personagem e escreva seu nome no primeiro quadrado menor. Clique em "Pronto".</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container pink-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img02album" src="album02.png" alt="Imagem 2">
+            <h3><mark>2º turno:</mark> Escreva um gênero musical no segundo quadro menor do desenho que receber. Exemplos: Rock, Pop, Sertanejo, Electro, Hip Hop, Forró, Lo-fi etc. Pressione "Pronto" ao acabar.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container red-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img03album" src="album03.png" alt="Imagem 2">
+            <h3><mark>3º turno:</mark> desenhe a arte da capa do álbum usando os dois elementos dados anteriormente durante um tempo estendido. NÃO escreva nada neste round! Clique em "Pronto" ao terminar.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container oran-bg">
+            <div class="overlay">
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img04album" src="album04.png" alt="Imagem 2">
+            <h3><mark>4º turno:</mark> crie e escreva um título para o álbum que receber.</h3>
           </div>
         </div>
         <div class="grid-item">
@@ -1005,6 +1108,71 @@
             <!-- Espaço para imagem ou GIF grande -->
             <img id="img02iarte" src="iarte02.png" alt="Imagem 2">
             <h3><mark>Turno único:</mark> cada jogador deve desenhar o personagem com base nas características dadas pela IA. Recomenda-se que o Streamer envie essas características no Discord e/ou fixe no chat da Twitch. Tempo estimado: 15, 20 ou 30+ minutos.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container red-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- Roleta -->
+     
+     <div class="content" id="tab-jogo18-content" style="display: none;">
+      <div class="info-icon">
+        ℹ️
+        <span class="tooltip"><h3>Configure:</h3><br><p>Modo: Obra de Arte</p><p>Tempo: Decisão do Host (15+)</p><p>Interação: Desenho Solo</p><p>Turnos: Turno Único</p><p>Manter Desenho: Desativado</p><h6>Trazido ao canal por: AnduSpark</h6></span>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="image-container pink-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <a href="https://raw.githubusercontent.com/anducdc/anducdc.github.io/refs/heads/main/roleta01.png" target="_blank"><img id="img01roleta" src="roleta01.png" alt="Imagem 1"></a>
+            <h3><mark>Antes de iniciar:</mark> o Streamer deve girar duas roletas usando sites como <a href="https://spinthewheel.io/pt" target="_blank">Spin the Wheel</a> ou <a href="https://pt.piliapp.com/random/wheel/" target="_blank">Piliapp</a> para sortear um tema de desenho e uma limitação para os artistas.<h3 style="color: rgb(5, 116, 1); background-color: #fdba00;">Exemplos (Temas/Limitações):</h3><h3 id="promptRoleta">Espacial <br>
+                Medieval <br>
+                Video Games <br>
+                Livre <br>
+                Futurista <br>
+                Steampunk <br>
+                Terror <br>
+                Oceano inexplorado <br>
+                Era do gelo <br>
+                <br>
+                Opacidade 2 <br>
+                Preto e branco <br>
+                Quadrados <br>
+                Linhas retas <br>
+                Linha 1 <br>
+                Duas Cores <br>
+                Pequeno Espaço <br>
+                Pontilhismo
+              </h3></h3>
+              <button onclick="CopiarPrompt2()">Copiar prompts</button>
+              <div id="copyMessage2" style="display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); background-color: #333; color: #fff; padding:10px 20px; border-radius:5px; font-size:14px; z-index:1000; opacity:0; transition: opacity 0.5s;"></div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container blue-bg">
+            <div class="overlay">
+              <div class="overlay-text">Primeiro Round</div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img02roleta" src="roleta02.png" alt="Imagem 2">
+            <h3><mark>Turno único:</mark> cada jogador deve fazer uma Obra de Arte dentro do tema e limitação em questão. Tempo estimado: 15, 20 ou 30+ minutos. <br> <br>
+            -<u>Opacidade 2</u> limita as linhas e cores a segunda menor opacidade possível. <br><br>
+            -<u>Preto e branco</u> indica que só essas duas cores (e opacidades) podem ser usadas. <br><br>
+            -<u>Quadrados</u> indica que só a ferramenta de quadrado pode ser usada na arte para desenhar e pintar. <br><br>
+            -<u>Linhas retas</u> indica que todo o desenho deve ser feito com essa ferramenta. <br><br>
+            -<u>Linha 1</u>: apenas a linha mais fina pode ser usada. <br><br>
+            -<u>Duas cores</u> limita o uso de cores para apenas duas de sua escolha (e suas opacidades). <br><br>
+            -<u>Pequeno espaço</u> limita a área de desenho a um quadrado. Quanto menor, melhor! O streamer também pode decidir seu tamanho. <br><br>
+            -<u>Pontilhismo</u> indica que o desenho deve ser feito inteiramente por pontos. <br><br>
+            -<u>Você pode adicionar novos temas e limitações!</u></h3>
           </div>
         </div>
         <div class="grid-item">
@@ -1234,6 +1402,33 @@ function showTemporaryMessage(message) {
     messageElement.style.opacity = "0";
     setTimeout(() => {
       messageElement.style.display = "none";
+    }, 500);
+  }, 3000);
+}
+
+function CopiarPrompt2() {
+  var copyText2 = document.getElementById("promptRoleta");
+
+  var textToCopy2 = copyText2.innerText || copyText2.textContent;
+
+  navigator.clipboard.writeText(textToCopy2).then(() => {
+    showTemporaryMessage2("Texto copiado com sucesso!");
+  }).catch(err => {
+    console.error("Erro ao copiar texto: ", err);
+  });
+}
+
+function showTemporaryMessage2(message) {
+  var messageElement2 = document.getElementById("copyMessage2");
+  messageElement2.innerText = message;
+  messageElement2.style.display = "block";
+  messageElement2.style.opacity = "1";
+
+
+  setTimeout(() => {
+    messageElement2.style.opacity = "0";
+    setTimeout(() => {
+      messageElement2.style.display = "none";
     }, 500);
   }, 3000);
 }
