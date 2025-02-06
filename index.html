@@ -13,7 +13,8 @@
       cursor: url("pincel2.png"), auto;
       min-height: 100vh;
       background: inherit;
-      overflow: scroll;
+      overflow-y: scroll;
+      overflow-x: hidden;
     }
     html {
       height: 100%;
@@ -93,7 +94,7 @@
     .tab:hover .texto-hover {
       opacity: 1; /* Torna o texto visível */
     }
-        .info-icon {
+    .info-icon {
       position: fixed;
       bottom: 20px;
       left: 20px;
@@ -157,7 +158,7 @@
     .grid-container2 {
       display: grid;
       grid-template-columns: repeat(3, 1fr); 
-      gap: 30px;
+      gap: 10px;
       transform: scale(1.2);
       margin: 5% 0 0 0;
     }
@@ -177,11 +178,11 @@
       overflow: hidden; 
     }
     #logomarca{
-      max-height: 70px;
+      max-height: 100px;
       padding-top: 10px;
     }
     #cabecalho {
-      padding-bottom: 30px;
+      padding-bottom: 50px;
     }
     #cabeca{
       text-align: center;
@@ -279,15 +280,24 @@
   </style>
 </head>
 <body>
-  <div id="cabeca">
-    <h1 id="cabecalho"><a href="https://www.twitch.tv/anduspark" target="_blank"><img id="logomarca" src="logo4.png"></a></h1>
-    <!--<h1 id="ajudePix" style="text-align: right;"><img id="mainImage" style="max-height: 70%; margin: 15px 50px 0px 50px;" src="suporte.png" alt="suporte o canal" onmouseover="changeImage(true)" onmouseout="changeImage(false)"></h1>
-    <img 
+  <img 
+    id="mainImage" 
+    style="max-height: 6%; margin: 15px; position: fixed; left: 88%; top: 92%; transform: translateY(-50%); cursor: pointer;" 
+    src="suporte.png" 
+    alt="suporte o canal" 
+    onmouseover="changeImage(true)" 
+    onmouseout="changeImage(false)"
+>
+
+  <img 
     id="tooltipImage2" 
     src="pix.png" 
     alt="tooltip2"
-    style="display: none; position: absolute; max-height: 150px; z-index: 10;"
-    >-->
+    style="display: none; position: fixed; right: 70px; top: 20%; transform: translateY(-140%); max-height: 120px; z-index: 10;"
+  >
+
+  <div id="cabeca">
+    <h1 id="cabecalho"><a href="https://www.twitch.tv/anduspark" target="_blank"><img id="logomarca" src="logo5.png"></a></h1>
   </div>
    <!-- Abas -->
   <div class="tabs-container">
@@ -488,7 +498,7 @@
             </div>
             <!-- Espaço para imagem ou GIF grande -->
             <img id="img03rpg" src="rpg02.png" alt="Imagem 1">
-            <h6><mark>2º turno:</mark> CLASSE/PROFISSÃO - desenhe a classe do personagem (guerreiro, arqueiro, mago etc). Você pode usar profissõees modernas (bombeiro etc) ou inventar uma. Clique em "Pronto".</h6>
+            <h6><mark>2º turno:</mark> CLASSE/PROFISSÃO - desenhe a classe do personagem (guerreiro, mago etc). Você pode usar profissõees modernas ou inventar uma. Clique em "Pronto".</h6>
           </div>
         </div>
         <div class="grid-item">
@@ -498,7 +508,7 @@
             </div>
             <!-- Espaço para imagem ou GIF grande -->
             <img id="img04rpg" src="rpg03.png" alt="Imagem 2">
-            <h6><mark>3º turno:</mark>RAÇA - desenhe a raça do personagem. Você pode usar raças de personagens (raça do Zoidberg etc) ou inventar uma. Clique em "Pronto"</h6>
+            <h6><mark>3º turno:</mark> RAÇA - desenhe a raça do personagem. Você pode usar raças de personagens conhecidos ou inventar uma. Clique em "Pronto"</h6>
           </div>
         </div>
         <div class="grid-item">
