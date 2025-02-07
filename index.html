@@ -89,7 +89,7 @@
     }
 
     .tab:hover img {
-      transform: scale(1.2);
+      transform: scale(1.3);
     }
 
     .tab:hover .texto-hover {
@@ -275,6 +275,72 @@
       opacity: 0;
     }
 
+    /* Rodapé fixo, mas inicialmente fora da tela */
+    #footer {
+      position: fixed;   /* Fixa o rodapé na parte inferior */
+      bottom: -50px;     /* Inicialmente fora da tela */
+      left: 0;
+      width: 100%;
+      background-color: #333333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+      transition: bottom 0 ease;  /* Animação suave para o rodapé aparecer */
+    }
+
+    
+
+    /* Estilo do link no rodapé */
+    #footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    #footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Estilo da Modal */
+    .modal {
+      display: none; /* Inicialmente a modal está escondida */
+      position: fixed;
+      z-index: 1; /* Fica sobre todo o conteúdo */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+      overflow: auto; /* Se o conteúdo for maior que a tela, rolará */
+    }
+
+    /* Estilo do conteúdo da modal */
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    /* Estilo do botão de fechar (X) */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+
 
     @font-face {
     font-family: 'Roboto-Regular';
@@ -302,6 +368,20 @@
     <h1 id="cabecalho"><a href="https://www.twitch.tv/anduspark" target="_blank"><img id="logomarca" src="logo5.png"></a></h1>
   </div>
 
+  <!-- Link no rodapé -->
+  <div id="footer">
+    <a href="javascript:void(0);" id="footerLink">sobre o site</a>
+  </div>
+
+  <!-- A Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <!-- Conteúdo da modal (Texto, imagens ou GIFs) -->
+      <p>Adicione o conteúdo aqui</p>
+    </div>
+  </div>
+  
    <!-- Abas -->
   <div class="tabs-container">
     <ul class="tabs">
@@ -1593,6 +1673,39 @@ const images = {
   img04gradual: ["31.png", "31-02.png"]
   };
   
+// Obtém os elementos necessários
+const footerLink = document.getElementById('footerLink');
+const modal = document.getElementById('myModal');
+const closeBtn = document.getElementsByClassName('close')[0];
+const footer = document.getElementById('footer');
+
+// Quando o link for clicado, abre a modal
+footerLink.onclick = function() {
+  modal.style.display = "block";
+}
+
+// Quando o botão de fechar (X) for clicado, fecha a modal
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Quando o usuário clicar fora da modal, fecha a modal
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Mostrar o footer quando o usuário rolar para baixo
+window.onscroll = function() {
+  // Verifica se o usuário rolou para baixo mais de 100px
+  if (document.documentElement.scrollTop > 100) {
+    footer.style.bottom = "0";  // Faz o rodapé aparecer na parte inferior
+  } else {
+    footer.style.bottom = "-50px";  // Faz o rodapé desaparecer (fora da tela)
+  }
+}
+
 
 const interval = 30000;
 
