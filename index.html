@@ -423,9 +423,9 @@
 
 <div class="tabs-container">
   <ul class="tabs">
-    <li class="tab" data-tab="tab-jogo199"><img src="img/testerealidade.webp" alt="Realidade Alternada" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Realidade Alternada</div></li>
-    <li class="tab" data-tab="tab-jogo21"><img src="img/testedialogos.webp" alt="Diálogos Impossíveis" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Diálogos Impossíveis</div></li>
-    <li class="tab" data-tab="tab-jogo22"><img src="img/testewanted.webp" alt="WANTED!" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">WANTED!</div></li>
+    <!--<li class="tab" data-tab="tab-jogo199"><img src="img/testerealidade.webp" alt="Realidade Alternada" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Realidade Alternada</div></li>-->
+    <!--<li class="tab" data-tab="tab-jogo21"><img src="img/testedialogos.webp" alt="Diálogos Impossíveis" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Diálogos Impossíveis</div></li>-->
+    <!--<li class="tab" data-tab="tab-jogo22"><img src="img/testewanted.webp" alt="WANTED!" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">WANTED!</div></li>-->
     <li class="tab" data-tab="tab-jogo23"><img src="img/testeesbo.webp" alt="Esboço" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Esboço</div></li>
   </ul>
 </div>
@@ -614,6 +614,65 @@
             <!-- Espaço para imagem ou GIF grande -->
             <img id="img06rpg" src="rpg05.png" alt="Imagem 4">
             <h6><mark>5º turno:</mark> crie um herói ou vilão usando todas as qualidades dadas nos quadrados menores em um tempo maior.</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Conteúdo da aba Frankenstein -->
+    <div class="content" id="tab-jogo20-content" style="display: none;">
+      <div class="info-icon">
+        ℹ️
+        <span class="tooltip"><h3>Configure:</h3><br><p>Modo: Cooperativo</p><p>Tempo: Decisão do Host (2/5-10/5-10/5-10/5-10)</p><p>Interação: Apenas Desenhar</p><p>Turnos: 5 turnos</p><p>Manter Desenho: Todos os Desenhos</p><h6>Trazido ao canal por: Comharra</h6><h6>Banner por @.kakashi_senpai</h6></span>
+      </div>
+      <div class="grid-container2">
+        <div class="grid-item">
+          <div class="image-container oran-bg">
+            <div class="overlay">
+              <div class="overlay-text"></div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img01frank" src="frank00.png" alt="Imagem 1">
+            <h6><mark>1º turno:</mark> Inicie desenhando uma figura de palito no canto da tela numa pose específica. Clique em "Pronto".</h6>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container oran-bg">
+            <div class="overlay">
+              <div class="overlay-text"></div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img02frank" src="frank01.png" alt="Imagem 1">
+            <h6><mark>2º turno:</mark> desenhe uma cabeça qualquer seguindo a pose pedida no primeiro turno como referência. Você pode desenhar uma versão maior da referência para que todos desenhem por cima, se preferir. Clique em "Pronto".</h6>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container yellow-bg">
+            <div class="overlay">
+              <div class="overlay-text"></div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img03frank" src="frank02.png" alt="Imagem 1">
+            <h6><mark>2º turno:</mark> desenhe um troco qualquer sob a cabeça que receber. Lembre-se de seguir a lógica da pose de referência. Clique em "Pronto".</h6>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container blue-bg">
+            <div class="overlay">
+              <div class="overlay-text"></div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img04frank" src="frank03.png" alt="Imagem 2">
+            <h6><mark>3º turno:</mark> desenhe um braço e uma perna como preferir seguindo a pose de referência. Clique em "Pronto".</h6>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container red-bg">
+            <div class="overlay">
+              <div class="overlay-text"></div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img05frank" src="frank04.png" alt="Imagem 3">
+            <h6><mark>4º turno:</mark> desenhe o outro braço e perna do desenho que receber com base na pose de referência.</h6>
           </div>
         </div>
       </div>
@@ -1672,7 +1731,12 @@ const images = {
   img01gradual: ["28.png", "28-02.png"],
   img02gradual: ["29.png", "29-02.png"],
   img03gradual: ["30.png", "30-02.png"],
-  img04gradual: ["31.png", "31-02.png"]
+  img04gradual: ["31.png", "31-02.png"],
+  img01frank: ["frank00.png", "frank00-02.png", "frank00-03.png"],
+  img02frank: ["frank01.png", "frank01-02.png", "frank01-03.png"],
+  img03frank: ["frank02.png", "frank02-02.png", "frank02-03.png"],
+  img04frank: ["frank03.png", "frank03-02.png", "frank03-03.png"],
+  img05frank: ["frank04.png", "frank04-02.png", "frank04-03.png"]
   };
   
 // Obtém os elementos necessários
