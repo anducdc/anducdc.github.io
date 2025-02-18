@@ -335,6 +335,20 @@
       cursor: pointer;
     }
 
+    #top5{
+      z-index: 10000;
+      position: absolute;
+      min-height: 28px;
+      transform: translateX(-120%);
+      border: 0;
+    }
+    .tab:hover #top5 {
+      transform: translateX(-50%) scale(1.3); /* Aumenta a imagem #top5 quando passar o cursor sobre a aba */
+
+    }
+    #top5:hover {
+      transform: translateX(-50%) scale(1.3); /* Aplica a escala de 1.3 quando o mouse passar */
+    }
 
 
     @font-face {
@@ -387,12 +401,12 @@
    <!-- Abas -->
   <div class="tabs-container">
     <ul class="tabs">
-      <li class="tab active" data-tab="tab-fusao"><img src="img/testefusao.webp" alt="Fusão" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Fusão</div></li>
-      <li class="tab" data-tab="tab-outros"><img src="img/testearmario.webp" alt="Armário" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Armário</div></li>
+      <li class="tab active" data-tab="tab-fusao"><img src="img/testefusao.webp" alt="Fusão" style="max-height: 20px; border-radius: 30px;"><img src="img/top5.png" alt="" id="top5"><div class="texto-hover">Fusão</div></li>
+      <li class="tab" data-tab="tab-outros"><img src="img/testearmario.webp" alt="Armário" style="max-height: 20px; border-radius: 30px;"><img src="img/top5.png" alt="" id="top5"><div class="texto-hover">Armário</div></li>
       <li class="tab" data-tab="tab-jogo1"><img src="img/testesilhueta.webp" alt="Silhueta" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Silhueta</div></li>
       <li class="tab" data-tab="tab-jogo2"><img src="img/testeversao.webp" alt="Versão" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Versão</div></li>
       <li class="tab" data-tab="tab-jogo3"><img src="img/testeecce.webp" alt="Ecce Homo" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Ecce Homo</div></li>
-      <li class="tab" data-tab="tab-jogo4"><img src="img/testeposter.webp" alt="Pôster de Filme" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Pôster de Filme</div></li>
+      <li class="tab" data-tab="tab-jogo4"><img src="img/testeposter.webp" alt="Pôster de Filme" style="max-height: 20px; border-radius: 30px;"><img src="img/top5.png" alt="" id="top5"><div class="texto-hover">Pôster de Filme</div></li>
       <li class="tab" data-tab="tab-jogo5"><img src="img/testetirinha.webp" alt="Tirinha" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Tirinha</div></li>
     </ul>
   </div>
@@ -412,8 +426,8 @@
 <div class="tabs-container">
   <ul class="tabs">
     <li class="tab" data-tab="tab-jogo13"><img src="img/testeversus.webp" alt="Versus" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Versus</div></li>
-    <li class="tab" data-tab="tab-jogo14"><img src="img/testearmariorpg.webp" alt="Armário RPG" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Armário RPG</div></li>
-    <li class="tab" data-tab="tab-jogo15"><img src="img/testepokedex.webp" alt="Pokédex" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Pokédex</div></li>
+    <li class="tab" data-tab="tab-jogo14"><img src="img/testearmariorpg.webp" alt="Armário RPG" style="max-height: 20px; border-radius: 30px;"><img src="img/top5.png" alt="" id="top5"><div class="texto-hover">Armário RPG</div></li>
+    <li class="tab" data-tab="tab-jogo15"><img src="img/testepokedex.webp" alt="Pokédex" style="max-height: 20px; border-radius: 30px;"><img src="img/top5.png" alt="" id="top5"><div class="texto-hover">Pokédex</div></li>
     <li class="tab" data-tab="tab-jogo16"><img src="img/testeevolucao.webp" alt="Evolução" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Evolução</div></li>
     <li class="tab" data-tab="tab-jogo17"><img src="img/testecapa.webp" alt="Capa de Álbum" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Capa de Álbum</div></li>
     <li class="tab" data-tab="tab-jogo18"><img src="img/testeroleta.webp" alt="Roleta" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Roleta</div></li>
