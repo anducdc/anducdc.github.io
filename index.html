@@ -354,6 +354,15 @@
       transform: translateX(-120%);
       border: 0;
     }
+
+    #newgame{
+      z-index: 10000;
+      position: absolute;
+      min-height: 10px;
+      max-height: 16px;
+      transform: translateX(-90%);
+      border: 0;
+    }
     .tab:hover #top5 {
       transform: translateX(-50%) scale(1.3);
 
@@ -455,6 +464,8 @@
     <li class="tab" data-tab="tab-jogo22"><img src="img/testewanted.webp" alt="WANTED!" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">WANTED!</div></li>
     <li class="tab" data-tab="tab-jogo23"><img src="img/testeesbo.webp" alt="Esboço" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Esboço</div></li>
     <li class="tab" data-tab="tab-jogo24"><img src="img/testepaleta.png" alt="Paleta Secreta" style="max-height: 20px; border-radius: 30px;"><div class="texto-hover">Paleta Secreta</div></li>
+    <li class="tab" data-tab="tab-jogo25"><img src="img/testeobramus.webp" alt="Obra Musical" style="max-height: 20px; border-radius: 30px;"><img src="img/446eed82d7f9109817bade96938c576d_w200.gif" alt="" id="newgame"><div class="texto-hover">Obra Musical</div></li>
+
   </ul>
 </div>
   <div class="container">
@@ -967,6 +978,42 @@
             <!-- Espaço para imagem ou GIF grande -->
             <img id="img02versao" src="14.png" alt="Imagem 2">
             <h3><mark>2º turno:</mark> faça a sua própria versão do desenho que receber na segunda metade da tela.</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container red-bg">
+            <div class="overlay">
+              <div class="overlay-text"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Espaço para o modo Obra Musical -->
+    
+    <div class="content" id="tab-jogo25-content" style="display: none;">
+      <div class="info-icon">
+        ℹ️
+        <span class="tooltip"><h3>Configure:</h3><br><p>Modo: Quebra-Gelo</p><p>Tempo: Decisão do Host (2/15, 30+)</p><p>Interação: Frase Fixa</p><p>Turnos: 2 turnos</p><p>Manter Desenho: Todos os Desenhos</p><h6>Trazido ao canal por: Catorzehyago</h6><h6>Banner por @anducdc</h6></span>
+      </div>
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="image-container pink-bg">
+            <div class="overlay">
+              <div class="overlay-text"></div>
+            </div>
+            <img id="img01music" src="music00.png" alt="Imagem 1">
+            <h3><mark>1º turno:</mark> Escreva o nome de uma música existente e o nome do artista. Clique em "Pronto".</h3>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="image-container blue-bg">
+            <div class="overlay">
+              <div class="overlay-text"></div>
+            </div>
+            <!-- Espaço para imagem ou GIF grande -->
+            <img id="img02music" src="music01.png" alt="Imagem 2">
+            <h3><mark>2º turno:</mark> faça um desenho com base na música que receber. Dica: procure pelas letras, veja um videoclipe ou até pesquise seu contexto/significado. O streamer pode optar por tocar a música durante a live entre a revelação do prompt e a interpretação que foi desenhada.</h3>
           </div>
         </div>
         <div class="grid-item">
